@@ -339,7 +339,7 @@ ___
 Örnek: `docker logs --details 12a793b3fec0`
 ___
 **Container tarafından oluşturulan logları belirli tarih aralığında görmek:**
-
+ 
 `docker logs --since tarih_saat --until tarih_saat container_id_or_name`
 
 Örnek: `docker logs --since 2020-01-13T11:34:43.154304300Z 12a793b3fec0` (since verilen andan itibaren olanları, until ise verilen ana kadar olanları listeler)
@@ -356,6 +356,7 @@ ___
 
 Örnek: `docker logs -f 12a793b3fec0` (loglar oluştukça ekranda gözükecektir. Ctrl-C ile bağlantı kesilebilir)
 
+docker logs -f cont1
 
  FROM | Oluşturulacak imajın hangi imajdan oluşturulacağını belirten talimat. Dockerfile içerisinde geçmesi mecburi tek talimat budur. Mutlaka olmalıdır. 
 Ör: FROM ubuntu:18.04
@@ -383,6 +384,7 @@ ENV | Imaj içinde environment variable tanımlamak için kullanılır
 
 ARG | ARG ile de variable tanımlarsınız. Fakat bu variable sadece imaj oluşturulurken yani build aşamasında kullanılır. Imajın oluşturulmuş halinde bu variable bulunmaz. ENV ile imaj oluşturulduktan sonra da imaj içinde olmasını istediğiniz variable tanımlarsınız, ARG ile sadece oluştururken kullanmanız gereken variable tanımlarsınız.
 Ör: ARG VERSION:1.0
+ARG VERSION=1.0
 
 VOLUME | Imaj içerisinde volume tanımlanamızı sağlayan talimat. Eğer bu volume host sistemde varsa container bunu kullanır. Yoksa yeni volume oluşturur. 
 Ör: VOLUME /myvol
